@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import useClients from '../composables/useClients';
 
-
 const { isLoading, clients } = useClients();
 
 console.log(clients.value);
@@ -10,9 +9,9 @@ console.log(clients.value);
 
 <template>
   <ul>
-    <li>
+    <li
+        v-for="client of clients" :key="client.id">
       <routerLink
-        v-for="client of clients" :key="client.id"
         :to="{
           name  : 'client-id',
           params: { id: client.id }
