@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-import useClients from '../composables/useClients';
+import type { IClient } from '../interfaces/Client';
 
-const { isLoading, clients } = useClients();
+interface Props {
+  clients: IClient[];
+}
 
-console.log(clients.value);
+const {clients} = defineProps<Props>()
 
 </script>
 
